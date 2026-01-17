@@ -12,6 +12,8 @@ Thumbs.db
 target/
 dist/
 build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
 
 # Dependencies
 node_modules/
