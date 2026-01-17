@@ -21,7 +21,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(jwt -> jwt.jwkSetUri("http://localhost:9000/oauth2/jwks"))
+                        .jwt(jwt -> {})
                 );
 
         return http.build();

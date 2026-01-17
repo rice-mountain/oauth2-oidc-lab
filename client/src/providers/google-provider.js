@@ -3,6 +3,7 @@ import { OAuth2Provider } from './oauth2-provider.js';
 /**
  * Google OAuth2.0/OIDC Provider
  * Documentation: https://developers.google.com/identity/protocols/oauth2
+ * Note: Google OAuth supports PKCE for enhanced security
  */
 export class GoogleProvider extends OAuth2Provider {
   constructor(clientId, clientSecret, redirectUri) {

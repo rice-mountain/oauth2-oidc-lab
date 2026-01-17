@@ -87,6 +87,7 @@ public class SecurityConfig {
                 .scope(OidcScopes.EMAIL)
                 .scope("read")
                 .scope("write")
+                .scope("admin")
                 .clientSettings(ClientSettings.builder()
                         .requireAuthorizationConsent(true)
                         .requireProofKey(true) // Require PKCE

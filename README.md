@@ -106,11 +106,15 @@ GITHUB_CLIENT_SECRET=your-github-client-secret
 3. 「OAuth 2.0 クライアント ID」を作成
 4. リダイレクトURIに `http://localhost:3000/callback/google` を追加
 
+**Note:** Google OAuth2.0はPKCEをサポートしています。
+
 #### GitHub OAuth2.0 クレデンシャルの取得
 
 1. [GitHub Developer Settings](https://github.com/settings/developers) にアクセス
 2. 「New OAuth App」を作成
 3. Authorization callback URLに `http://localhost:3000/callback/github` を設定
+
+**Note:** GitHub OAuth2.0は標準のOAuth 2.0フローを使用しますが、PKCEはサポートしていません。このため、GitHub認証ではクライアントシークレットが必要です。
 
 ### 2. Spring Boot サービスのビルド
 

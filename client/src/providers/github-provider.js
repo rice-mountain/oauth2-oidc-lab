@@ -20,6 +20,7 @@ export class GitHubProvider extends OAuth2Provider {
 
   /**
    * Override token exchange to handle GitHub's Accept header requirement
+   * Note: GitHub OAuth does not support PKCE, so codeVerifier is not used
    */
   async exchangeCodeForTokens(code, codeVerifier) {
     const params = new URLSearchParams({
@@ -28,6 +29,8 @@ export class GitHubProvider extends OAuth2Provider {
       code: code,
       redirect_uri: this.redirectUri,
     });
+
+    // Note: GitHub OAuth does not support PKCE (code_verifier not sent)
 
     try {
       const axios = (await import('axios')).default;
