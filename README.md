@@ -80,7 +80,7 @@ OAuth2.0 / OpenID Connect の技術検証用モノレポジトリ。
 
 - Node.js 18以上
 - Java 17以上
-- Maven 3.6以上
+- Gradle 8.5以上（Gradle Wrapperが含まれています）
 
 ### 1. Node.js クライアントのセットアップ
 
@@ -121,15 +121,15 @@ GITHUB_CLIENT_SECRET=your-github-client-secret
 ```bash
 # 認可サーバ
 cd authorization-server
-mvn clean package
+./gradlew build
 
 # リソースサーバ
 cd ../resource-server
-mvn clean package
+./gradlew build
 
 # リソースオーナー
 cd ../resource-owner
-mvn clean package
+./gradlew build
 ```
 
 ## 起動方法
@@ -140,7 +140,7 @@ mvn clean package
 
 ```bash
 cd authorization-server
-mvn spring-boot:run
+./gradlew bootRun
 ```
 
 デフォルトユーザー：
@@ -151,14 +151,14 @@ mvn spring-boot:run
 
 ```bash
 cd resource-server
-mvn spring-boot:run
+./gradlew bootRun
 ```
 
 ### 3. リソースオーナーを起動（ポート 8082）
 
 ```bash
 cd resource-owner
-mvn spring-boot:run
+./gradlew bootRun
 ```
 
 H2コンソール: http://localhost:8082/h2-console
